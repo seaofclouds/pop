@@ -19,3 +19,5 @@ body {
     body .container code {
       background-color: #F594A2;
       font-size: 85%; }
+    body .container a {
+      color: #fff; }
