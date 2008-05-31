@@ -1,4 +1,5 @@
-POP! enjoy simple dropdown menus with <em>pop!</em>, a jquery based javascript plugin.
+POP! enjoy simple dropdown menus with pop!, a jquery based javascript plugin.
+http://pop.seaofclouds.com
 
 === Usage ===
 
@@ -17,3 +18,11 @@ POP! enjoy simple dropdown menus with <em>pop!</em>, a jquery based javascript p
    <p>you can put anything you want in here!</p>
    <p>images, links, movies of your cats. you name it!</p>
 </div>
+
+=== Git It ===
+
+git clone git@github.com:seaofclouds/pop.git
+
+=== Download ===
+
+http://github.com/seaofclouds/pop/tarball/master
