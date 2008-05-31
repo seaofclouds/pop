@@ -1,0 +1,21 @@
+body {
+  background-color: #EE2B7B;
+  color: #fff;
+  font-size: 11pt;
+  font-family: arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+  body .container {
+    padding: 2em;
+    width: 28em;
+    margin: 0 auto;
+    text-align: left; }
+    body .container h1 {
+      font-size: 240%;
+      margin-bottom: -.5em; }
+    body .container h2, body .container h3, body .container p, body .container ul, body .container code {
+      margin-bottom: 1em; }
+    body .container code {
+      background-color: #F594A2;
+      font-size: 85%; }

@@ -1,0 +1,41 @@
+.pop {
+  position: absolute;
+  display: inline; }
+  .pop .pop_close_button, .pop .pop_menu_button {
+    display: block; }
+  .pop .pop_menu {
+    display: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px; }
+  .pop .pop_menu_button {
+    background-image: url(/images/arrow-down.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    overflow: hidden; }
+    .pop .pop_menu_button a {
+      display: block;
+      text-indent: 20px;
+      cursor: pointer; }
+
+.active .pop_menu, .active .pop_menu_button {
+  display: block; }
+.active .pop_menu {
+  background-color: #F594A2;
+  color: #fff;
+  position: absolute;
+  padding: .6em;
+  width: 8em; }
+  .active .pop_menu a {
+    color: #fff; }
+.active .pop_close_button {
+  position: absolute;
+  top: 0;
+  right: 0; }
+.active .pop_menu_button {
+  z-index: 2000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(/images/arrow-up.gif); }

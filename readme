@@ -1,0 +1,19 @@
+POP! enjoy simple dropdown menus with <em>pop!</em>, a jquery based javascript plugin.
+
+=== Usage ===
+
+<link href="stylesheets/pop.css" media="all" rel="stylesheet" type="text/css"/>
+
+<script language="javascript" src="javascripts/jquery.js" type="text/javascript"></script>
+<script language="javascript" src="javascripts/jquery.pop.js" type="text/javascript"></script>
+
+<script type='text/javascript'>
+   $(document).ready(function(){
+     $.pop();
+   });
+</script>
+
+<div class='pop'>
+   <p>you can put anything you want in here!</p>
+   <p>images, links, movies of your cats. you name it!</p>
+</div>
