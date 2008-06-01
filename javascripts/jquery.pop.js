@@ -14,19 +14,24 @@
     
     // settings
     var settings = {
-     pop_class : '.pop'
+     pop_class : '.pop',
+     pop_toggle_text : ''
     }
+    
     // inject html wrapper
-    var pop_classes = $(settings.pop_class).attr("class");
-    $(settings.pop_class).addClass("pop_menu");
-    $(settings.pop_class).wrap("<div class='"+pop_classes+"'></div>");
-    $(".pop_menu").attr("class", "pop_menu");
-    $(settings.pop_class).prepend(" \
-     <span class='pop_toggle pop_menu_button'><a href='javascript:void(0)' title='menu'>menu</a></span> \
-     ");
-    //$(".pop_menu").prepend(" \
-    // <a href='#' class='pop_toggle pop_close_button' title='close'>close</a> \
-    // ");
+    function initpops (){
+      $(settings.pop_class).each(function() {
+        var pop_classes = $(this).attr("class");
+        $(this).addClass("pop_menu");
+        $(this).wrap("<div class='"+pop_classes+"'></div>");
+        $(".pop_menu").attr("class", "pop_menu");
+        $(this).before(" \
+          <div class='pop_toggle'>"+settings.pop_toggle_text+"</div> \
+          ");
+      });
+    }
+    initpops();
+    
     // assign reverse z-indexes to each pop
     var totalpops = $(settings.pop_class).size() + 1000;
     $(settings.pop_class).each(function(i) {
@@ -51,7 +56,7 @@
     });
     // toggle that pop
     $(".pop_toggle").click(function(){
-     $(this).parents(settings.pop_class).toggleClass("active");
+      $(this).parent(settings.pop_class).toggleClass("active");
     });
   }
 

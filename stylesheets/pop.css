@@ -1,27 +1,21 @@
 .pop {
   position: absolute;
   display: inline; }
-  .pop .pop_close_button, .pop .pop_menu_button {
-    display: block; }
   .pop .pop_menu {
     display: none;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px; }
-  .pop .pop_menu_button {
+  .pop .pop_toggle {
     background-image: url(/images/arrow-down.gif);
     background-repeat: no-repeat;
     background-position: center center;
     width: 20px;
     height: 20px;
-    overflow: hidden; }
-    .pop .pop_menu_button a {
-      display: block;
-      text-indent: 20px;
-      cursor: pointer; }
+    overflow: hidden;
+    cursor: pointer; }
 
-.active .pop_menu, .active .pop_menu_button {
-  display: block; }
 .active .pop_menu {
+  display: block;
   background-color: #F594A2;
   color: #fff;
   position: absolute;
@@ -29,11 +23,7 @@
   width: 12em; }
   .active .pop_menu a {
     color: #fff; }
-.active .pop_close_button {
-  position: absolute;
-  top: 0;
-  right: 0; }
-.active .pop_menu_button {
+.active .pop_toggle {
   z-index: 2000;
   position: absolute;
   top: 0;

@@ -8,7 +8,7 @@ body {
   text-align: center; }
   body .container {
     padding: 2em;
-    width: 28em;
+    width: 32em;
     margin: 0 auto;
     text-align: left; }
     body .container h1 {
@@ -25,8 +25,11 @@ body {
       font-family: verdana, sans-serif;
       font-size: 75%;
       margin-top: 8em; }
-    body .container .menu h3 {
-      display: inline;
-      margin-right: 3em; }
-    body .container .menu .popskinny .active {
+    body .container .menu {
+      margin-bottom: 2em;
+      margin-top: 2em; }
+      body .container .menu h3 {
+        display: inline;
+        margin-right: 3em; }
+    body .container .popskinny .pop_menu {
       width: 4em; }
