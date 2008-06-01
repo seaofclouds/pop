@@ -22,7 +22,7 @@
     $(settings.pop_class).wrap("<div class='"+pop_classes+"'></div>");
     $(".pop_menu").attr("class", "pop_menu");
     $(settings.pop_class).prepend(" \
-     <span class='pop_toggle pop_menu_button'><a href='#' title='menu'>menu</a></span> \
+     <span class='pop_toggle pop_menu_button'><a href='javascript:void(0)' title='menu'>menu</a></span> \
      ");
     //$(".pop_menu").prepend(" \
     // <a href='#' class='pop_toggle pop_close_button' title='close'>close</a> \
