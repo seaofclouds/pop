@@ -25,3 +25,8 @@ body {
       font-family: verdana, sans-serif;
       font-size: 75%;
       margin-top: 8em; }
+    body .container .menu h3 {
+      display: inline;
+      margin-right: 3em; }
+    body .container .menu .popskinny .active {
+      width: 4em; }
