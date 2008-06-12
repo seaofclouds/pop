@@ -16,6 +16,9 @@ body {
       margin-bottom: -.5em; }
     body .container h2, body .container h3, body .container p, body .container ul, body .container code {
       margin-bottom: 1em; }
+    body .container h3 {
+      font-size: 140%;
+      margin-bottom: .4em; }
     body .container code {
       background-color: #DC2670;
       font-size: 85%; }
@@ -31,5 +34,9 @@ body {
       body .container .menu h3 {
         display: inline;
         margin-right: 3em; }
-    body .container .popskinny .pop_menu {
-      width: 4em; }
+    body .container .download h4 {
+      font-size: 120%;
+      margin-top: -.5em;
+      color: #FFC4CB; }
+      body .container .download h4 a {
+        color: #FFC4CB; }
