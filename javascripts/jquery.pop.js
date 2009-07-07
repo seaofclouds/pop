@@ -10,54 +10,67 @@
 
 (function($) {
   
-  $.pop = function(options){
+  $.fn.pop = function(o){
     
     // settings
-    var settings = {
-     pop_class : '.pop',
-     pop_toggle_text : ''
+    var s = {
+     pop_toggle_text : '',
+     pop_toggle_class : 'pop_toggle',
+     pop_menu_class : 'pop_menu'
     }
     
-    // inject html wrapper
-    function initpops (){
-      $(settings.pop_class).each(function() {
-        var pop_classes = $(this).attr("class");
-        $(this).addClass("pop_menu");
-        $(this).wrap("<div class='"+pop_classes+"'></div>");
-        $(".pop_menu").attr("class", "pop_menu");
-        $(this).before(" \
-          <div class='pop_toggle'>"+settings.pop_toggle_text+"</div> \
-          ");
+    // $.fn.extend({
+    // });
+    if(o) $.fn.extend(s, o);
+    return this.each(function(i,a){
+      // wrap pop menu in div with original classes
+      var pop_classes = $(this).attr("class");
+      $(this).wrap("<div class='"+pop_classes+"'></div>");
+      // add pop menu class
+      $(this).addClass(s.pop_menu_class);
+      // set pop menu to pop menu class from settings
+      $(this).attr("class", s.pop_menu_class);
+      // assign reverse z-indexes to each pop
+      var pop_count = $(this).size() + 1000;
+      var pop_zindex = pop_count - i;
+      $(this).parent().css({ zIndex: pop_zindex });
+      // insert pop toggle before pop menu
+      $(this).before(" \
+        <div class='"+s.pop_toggle_class+"'>"+s.pop_toggle_text+"</div> \
+      ");
+      // if ($(this).parent().hasClass('pop_active') && a!=pop_active) {
+      //   $(this).parent().removeClass('pop_active');
+      //   }
+      $(this).parent().click(function(){
+        $(this).parent().toggleClass("pop_active");
       });
-    }
-    initpops();
-    
-    // assign reverse z-indexes to each pop
-    var totalpops = $(settings.pop_class).size() + 1000;
-    $(settings.pop_class).each(function(i) {
-     var popzindex = totalpops - i;
-     $(this).css({ zIndex: popzindex });
     });
+
+    return this.each(function(){
+      $(this).parent().click(function(){
+        $(this).parent().toggleClass("pop_active");
+      });
+      var pop_active = null;
+      // close pops if user clicks outside of pop
+      $(this).parent().mouseover(function() {         
+        var pop_active = $(this).index(this); }
+      );
+      $(this).parent().mouseout(function() {
+        var pop_active = null; }
+      );
+    })
     // close pops if user clicks outside of pop
-    activePop = null;
-    function closeInactivePop() {
-      $(settings.pop_class).each(function (i) {
-        if ($(this).hasClass('active') && i!=activePop) {
-          $(this).removeClass('active');
-          }
+    function closeInactivePop() {      
+      return this.each(function (i) {
       });
       return false;
     }
-    $(settings.pop_class).mouseover(function() { activePop = $(settings.pop_class).index(this); });
-    $(settings.pop_class).mouseout(function() { activePop = null; });
-
-    $(document.body).click(function(){ 
+    $(document.body).click(function(){       
+      alert();
      closeInactivePop();
     });
-    // toggle that pop
-    $(".pop_toggle").click(function(){
-      $(this).parent(settings.pop_class).toggleClass("active");
-    });
-  }
 
+  };
+
+  
 })(jQuery);
