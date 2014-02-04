@@ -10,8 +10,15 @@
 
 (function($) {
   
-  $.pop = function(options){
-    
+  $.pop = function(opts){
+    // default options
+    var options = {
+        onPopActive: function() {},
+        onPopInactive: function() {},
+    };
+
+    $.extend(options, opts);
+
     // settings
     var settings = {
      pop_class : '.pop',
@@ -56,7 +63,13 @@
     });
     // toggle that pop
     $(".pop_toggle").click(function(){
-      $(this).parent(settings.pop_class).toggleClass("active");
+      var $popClass = $(this).parent(settings.pop_class);
+      $popClass.toggleClass("active");
+      if ($popClass.hasClass('active')) {
+        options.onPopActive();
+      } else {
+        options.onPopInactive();
+      }
     });
   }
 
